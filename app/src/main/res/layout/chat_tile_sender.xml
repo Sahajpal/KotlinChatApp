@@ -6,15 +6,33 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView_sender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:background="@drawable/rounded_corners_chat_right"
         android:maxWidth="250dp"
-        android:padding="16dp"
+        android:minWidth="100dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        android:paddingBottom="24dp"
         android:text="Message........................................................"
         android:textColor="@color/white"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timeFrom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:textColor="#FFFFFF"
+        android:textSize="12dp"
+        android:background="@drawable/rounded_corners_chat_right"
+        android:paddingRight="16dp"
+        android:paddingBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView_sender"
+        app:layout_constraintEnd_toEndOf="@+id/textView_sender"></TextView>
 </androidx.constraintlayout.widget.ConstraintLayout>

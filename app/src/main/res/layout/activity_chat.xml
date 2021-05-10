@@ -7,7 +7,7 @@
     tools:context=".Chat">
 
     <EditText
-        android:id="@+id/chat"
+        android:id="@+id/chat_edittext"
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
@@ -20,11 +20,11 @@
         android:paddingRight="8dp"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/send"
+        app:layout_constraintEnd_toStartOf="@+id/send_message"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
-        android:id="@+id/send"
+        android:id="@+id/send_message"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="16dp"
@@ -41,7 +41,7 @@
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/chat"
+        app:layout_constraintBottom_toTopOf="@+id/chat_edittext"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

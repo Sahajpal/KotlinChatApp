@@ -41,10 +41,9 @@ class MainActivity : AppCompatActivity() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 val adapter = GroupAdapter<GroupieViewHolder>()
-
                 snapshot.children.forEach{
                     val user = it.getValue(UserModel::class.java)
-                    if(user!=null) {
+                    if(user!=null && user.uid!="lSDFfJ8BxVhHcekAM9qa4kEX1dU2") {
                         adapter.add(UserInfo(user))
                     }
                 }
@@ -65,6 +64,7 @@ class UserInfo(val user:UserModel):Item<GroupieViewHolder>(){
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
         viewHolder.itemView.name.text = user.username
         Picasso.get().load(user.profileImageUrl).into(viewHolder.itemView.image)
+
     }
 
     override fun getLayout(): Int {
