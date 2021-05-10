@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "966095555527",
+    "project_id": "chatapp-356a4",
+    "firebase_url": "https://chatapp-356a4-default-rtdb.firebaseio.com/",
+    "storage_bucket": "chatapp-356a4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966095555527:android:2c392b31e97761063627e2",
+        "android_client_info": {
+          "package_name": "com.example.chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966095555527-lb3to72a8oq6ta7u51dqup23jvs6ak13.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnAVWPw88yL4bXS8AwD4xmL0NZZ3veXOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966095555527-lb3to72a8oq6ta7u51dqup23jvs6ak13.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966095555527:android:dd0295d09da2836d3627e2",
+        "android_client_info": {
+          "package_name": "com.ryms.kotlinchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966095555527-lb3to72a8oq6ta7u51dqup23jvs6ak13.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnAVWPw88yL4bXS8AwD4xmL0NZZ3veXOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966095555527-lb3to72a8oq6ta7u51dqup23jvs6ak13.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
