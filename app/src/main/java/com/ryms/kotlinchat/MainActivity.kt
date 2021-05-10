@@ -1,7 +1,7 @@
 package com.ryms.kotlinchat
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,10 +22,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        supportActionBar?.title = "ChatApp"
+
         recyclerview_user.addItemDecoration(DividerItemDecoration(applicationContext, LinearLayoutManager.VERTICAL))
         fetchUsers()
 
     }
+
+    companion object{
+        val USER_KEY = "USER_KEY"
+    }
+
     private fun fetchUsers(){
         val ref = FirebaseDatabase.getInstance().getReference("/users")
         ref.addListenerForSingleValueEvent(object: ValueEventListener{
@@ -40,6 +47,13 @@ class MainActivity : AppCompatActivity() {
                     if(user!=null) {
                         adapter.add(UserInfo(user))
                     }
+                }
+
+                adapter.setOnItemClickListener{item, view ->
+                    val userItem = item as UserInfo
+                    val intent = Intent(view.context, Chat::class.java)
+                    intent.putExtra(USER_KEY, userItem.user)
+                    startActivity(intent)
                 }
                 recyclerview_user.adapter = adapter
             }
