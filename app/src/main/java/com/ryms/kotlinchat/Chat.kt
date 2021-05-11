@@ -16,6 +16,9 @@ import com.xwray.groupie.Item
 import kotlinx.android.synthetic.main.activity_chat.*
 import kotlinx.android.synthetic.main.chat_tile_receiver.view.*
 import kotlinx.android.synthetic.main.chat_tile_sender.view.*
+import java.sql.Date
+import java.sql.Time
+import java.sql.Timestamp
 
 class Chat : AppCompatActivity() {
     val adapter = GroupAdapter<GroupieViewHolder>()
@@ -53,9 +56,9 @@ class Chat : AppCompatActivity() {
                 val chatMessage = snapshot.getValue(ChatModel::class.java)
 
                 if(chatMessage!!.fromId == FirebaseAuth.getInstance().uid){
-                    adapter.add(ChatItemSender(chatMessage!!.text))
+                    adapter.add(ChatItemSender(ChatModel("", chatMessage.text, "" ,"", chatMessage.timeStamp)))
                 } else{
-                    adapter.add(ChatItemReceiver(chatMessage!!.text))
+                    adapter.add(ChatItemReceiver(ChatModel("", chatMessage.text, "" ,"", chatMessage.timeStamp)))
                 }
             }
 
@@ -88,9 +91,11 @@ class Chat : AppCompatActivity() {
     }
 }
 
-class ChatItemReceiver(val text: String): Item<GroupieViewHolder>(){
+class ChatItemReceiver(val message: ChatModel): Item<GroupieViewHolder>(){
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
-        viewHolder.itemView.textView_receiver.text = text
+        viewHolder.itemView.textView_receiver.text = message.text
+        viewHolder.itemView.timeTo.text = Time(Timestamp(message.timeStamp * 1000).time).toString()
+
     }
 
     override fun getLayout(): Int {
@@ -98,10 +103,10 @@ class ChatItemReceiver(val text: String): Item<GroupieViewHolder>(){
     }
 }
 
-class ChatItemSender(val text: String): Item<GroupieViewHolder>(){
+class ChatItemSender(val message: ChatModel): Item<GroupieViewHolder>(){
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
-        viewHolder.itemView.textView_sender.text = text
-
+        viewHolder.itemView.textView_sender.text = message.text
+        viewHolder.itemView.timeFrom.text = Time(Timestamp(message.timeStamp * 1000).time).toString()
     }
 
     override fun getLayout(): Int {
